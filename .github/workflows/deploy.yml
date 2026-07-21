@@ -1,0 +1,23 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: m
+        run: echo "slug=$(jq -r .slug fabrica.json)" >> "$GITHUB_OUTPUT"
+      - name: SSH setup
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s' "${{ secrets.DH_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "${{ secrets.DH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+      - name: Deploy project
+        run: rsync -rvzc --delete --chmod=D755,F644 --exclude='.git*' --exclude='.github/' --exclude='*.md' --exclude='fabrica.json' -e "ssh -o StrictHostKeyChecking=yes" ./ "${{ secrets.DH_USER }}@${{ secrets.DH_HOST }}:gbrl.com.br/${{ steps.m.outputs.slug }}/"
+      - name: Notify catalog
+        env: { GH_TOKEN: "${{ secrets.FABRICA_PAT }}" }
+        run: jq -n --slurpfile m fabrica.json '{event_type:"project-upsert",client_payload:{project:$m[0]}}' | gh api repos/gabrielsouto/fabrica-site/dispatches --input -
