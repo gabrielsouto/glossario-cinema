@@ -1,9 +1,29 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Glossário de Cinema e Audiovisual</title><meta name="description" content="Glossário pesquisável de termos de cinema e produção audiovisual."><link rel="stylesheet" href="styles.css"></head><body><aside class="sidebar" aria-label="Navegação da ferramenta"><a href="#inicio" class="sidebar-brand">▶ <strong>Do roteiro à tela</strong></a><nav class="sidebar-nav"><a href="#termos">Termos</a><a href="#fonte">Fonte</a></nav><p class="sidebar-note">LGPD: a busca é local.</p></aside><main id="inicio" class="page-shell"><header><p class="eyebrow">Produção audiovisual</p><h1>Glossário de cinema</h1><p>Encontre rapidamente termos usados no set, na ilha de edição e na entrega final.</p></header><span id="ferramenta" class="anchor-target" aria-hidden="true"></span><section id="termos"><form><label>Buscar<input id="busca" placeholder="Ex.: codec, plano, montagem"></label><label>Área<select id="categoria"><option value="">Todas</option><option>Captação</option><option>Edição</option><option>Roteiro</option><option>Áudio</option><option>Distribuição</option></select></label></form><p id="contador"></p><div id="lista" aria-live="polite"></div></section><section id="fonte"><h2>Referência</h2><p>As definições são resumos introdutórios. O <a href="https://helpx.adobe.com/premiere-elements/desktop/using/glossary.html" target="_blank" rel="noopener">glossário oficial do Adobe Premiere Elements</a> detalha termos técnicos como frame, frame rate, codec, rough cut e final cut.</p></section><footer id="fontes">Parte da <a href="https://gbrl.com.br/">Fábrica / 1000</a></footer>
-  <footer class="fabrica-credit">
-    <p>Este site faz parte da <a href="https://gbrl.com.br/">Fábrica / 1000</a>, um projeto de 1.000 sites.</p>
-    <nav aria-label="Redes sociais">
-      <a href="https://www.linkedin.com/in/soutogabriel/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://youtube.com/gabrielsouto" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://github.com/gabrielsouto" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-  </footer></main><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossário de Cinema e Audiovisual</title>
+  <meta name="description" content="Busque termos de captação, roteiro, edição, áudio e distribuição audiovisual, com definições diretas em português.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar" aria-label="Navegação do glossário">
+    <div>
+      <a class="brand" href="#inicio" aria-label="Glossário de Cinema e Audiovisual"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 4 14 8-14 8Z"></path><path d="M8 6.2v11.6"></path></svg></span><strong>Glossário de Cinema e Audiovisual</strong></a>
+      <p class="cat-label">Categorias</p>
+      <nav id="catNav" aria-label="Filtrar por categoria"></nav>
+      <button class="ghost reset-btn" type="button" id="resetBtn">Limpar filtros</button>
+    </div>
+    <p class="privacy">LGPD: nada é enviado para servidor. A busca e os filtros rodam só no seu navegador.</p>
+  </aside>
+  <main id="inicio" class="shell">
+    <section class="intro" aria-labelledby="titulo"><p class="eyebrow">Ferramenta grátis</p><h1 id="titulo">Glossário de cinema e audiovisual</h1><p>Do roteiro à entrega final: termos de set, edição, áudio e distribuição com busca instantânea.</p></section>
+    <section id="ferramenta" class="panel search-panel" aria-label="Busca"><div class="search-box"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input id="search" type="search" placeholder="Buscar termo ou definição…" autocomplete="off"></div><span class="result-count" id="resultCount" aria-live="polite"></span></section>
+    <section id="resultados" aria-label="Lista de termos"><div id="results"></div></section>
+    <section id="fontes" class="notice" aria-label="Fontes e limites"><strong>Fonte oficial e limites</strong><p>As definições são resumos introdutórios baseados no <a href="https://helpx.adobe.com/premiere-elements/desktop/using/glossary.html" target="_blank" rel="noopener">glossário oficial do Adobe Premiere Elements</a>, que detalha termos como frame, frame rate, codec, rough cut e final cut.</p><p>O uso de cada termo pode variar entre equipes, softwares e etapas da produção.</p></section>
+    <footer class="fabrica-credit"><p>Este site faz parte da <a href="https://gbrl.com.br/">Fábrica / 1000</a>, um projeto de 1.000 sites.</p><nav aria-label="Redes sociais"><a href="https://www.linkedin.com/in/soutogabriel/" target="_blank" rel="noopener">LinkedIn</a><a href="https://youtube.com/gabrielsouto" target="_blank" rel="noopener">YouTube</a><a href="https://github.com/gabrielsouto" target="_blank" rel="noopener">GitHub</a></nav></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
